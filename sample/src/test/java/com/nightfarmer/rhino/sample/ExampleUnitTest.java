@@ -38,4 +38,12 @@ public class ExampleUnitTest {
         Object name = scope.get("testName");
         System.out.println(name);
     }
+
+    @Test
+    public void testAb() {
+        String str = "        new com.nightfarmer.rhino.sample.AAA( {                       })";
+        Context jsCtx = Context.enter();
+        ScriptableObject scope = jsCtx.initStandardObjects();
+        jsCtx.evaluateString(scope, str, null, 0, null);
+    }
 }
